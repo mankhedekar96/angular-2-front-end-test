@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpService } from 'src/app/services/http.service';
 import { AppSettings } from 'src/app/app.settings';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-userlist',
@@ -9,20 +10,20 @@ import { AppSettings } from 'src/app/app.settings';
 })
 export class UserlistComponent implements OnInit {
 
-  users:any[];
+  users: any[];
 
-  constructor(private http:HttpService) { }
+  constructor(private http: HttpService,
+    private router: Router) { }
 
   ngOnInit() {
-    this.http.get('users').subscribe((res)=>{
+    this.http.get('users').subscribe((res: any[]) => {
       this.users = res;
     });
   }
 
-  goToAlbums(user:any){
-    this.http.get('albums/'+user.id).subscribe((res)=>{
-      console.log(res)
-    });
+  goToAlbums(user: any) {
+    console.log(user);
+    this.router.navigate(['/albums/'+user.id])
   }
 
 }

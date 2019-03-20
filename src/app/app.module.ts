@@ -7,6 +7,7 @@ import { AlbumlistComponent } from './component/albumlist/albumlist.component';
 import { PhotolistComponent } from './component/photolist/photolist.component';
 import { HttpService } from './services/http.service';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { AppRoutingModule } from './routing.module';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
   ],
   imports: [
     BrowserModule,
-    HttpClientModule
+    HttpClientModule,
+    AppRoutingModule
   ],
   providers: [HttpService],
   bootstrap: [AppComponent]
