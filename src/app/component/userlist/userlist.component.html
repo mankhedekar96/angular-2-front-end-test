@@ -2,7 +2,7 @@
   <h1>List Of Users</h1>
 
   <ul class="list-group">
-    <li class="list-group-item" *ngFor="let user of users" (click)="goToAlbums(user)">
+    <li class="list-group-item cursor-pointer" *ngFor="let user of users" (click)="goToAlbums(user)">
       {{user.name}}
     </li>
   </ul>

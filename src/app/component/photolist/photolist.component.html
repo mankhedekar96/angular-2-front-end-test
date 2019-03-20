@@ -1,11 +1,9 @@
 <div class="container card mt-2 p-2">
   <h1>Photos of you</h1>
-
-  <ul class="list-group">
-    <li class="list-group-item" *ngFor="let photo of photos">
-      <h2>{{photo.title}}</h2>
-      <img [src]="photo.url" height="400" width="400">
-
-    </li>
-  </ul>
+    <div class="card" *ngFor="let photo of photos">
+      <img class="card-img-top" [src]="photo.url" alt="Card image" height="300" width="30">
+      <div class="card-body">
+        <h4 class="card-title text-center">{{photo.title}}</h4>
+      </div>
+    </div>
 </div>
