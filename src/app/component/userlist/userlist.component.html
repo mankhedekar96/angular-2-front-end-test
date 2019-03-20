@@ -1,8 +1,8 @@
-<div class="container card mt-2">
+<div class="container card mt-2 p-2">
   <h1>List Of Users</h1>
 
-  <ul>
-    <li *ngFor="let user of users" (click)="goToAlbums()">
+  <ul class="list-group">
+    <li class="list-group-item" *ngFor="let user of users" (click)="goToAlbums(user)">
       {{user.name}}
     </li>
   </ul>

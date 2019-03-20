@@ -10,7 +10,7 @@ import { AppSettings } from 'src/app/app.settings';
 export class UserlistComponent implements OnInit {
 
   users:any[];
-  
+
   constructor(private http:HttpService) { }
 
   ngOnInit() {
@@ -20,7 +20,9 @@ export class UserlistComponent implements OnInit {
   }
 
   goToAlbums(user:any){
-
+    this.http.get('albums/'+user.id).subscribe((res)=>{
+      console.log(res)
+    });
   }
 
 }
